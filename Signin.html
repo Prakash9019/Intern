@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+      <div class="flex flex-col px-4 pt-4 pb-8 rounded-xl bg-zinc-50 max-w-[375px]">
+        <header class="flex gap-5 justify-between self-start ml-3 text-base font-semibold tracking-tight text-center whitespace-nowrap text-neutral-800">
+          <div>9:41</div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fb36d0140455c1ed268adc238f98be3b009e61ccd5a0e97ad85e4466f8bae401?apiKey=42bb954c825745999302100cb42c8fd0&" alt="Mobile signal and battery status" class="shrink-0 self-start aspect-[5.56] w-[67px]" />
+        </header>
+        <h1 class="mt-11 text-xl font-semibold text-zinc-800">Create an account</h1>
+        <form>
+          <label for="firstName" class="sr-only">First Name</label>
+          <input type="text" id="firstName" placeholder="First Name" aria-label="First Name" class="justify-center items-start px-5 py-5 mt-12 text-xs font-semibold rounded-xl bg-zinc-100 text-zinc-500" />
+          
+          <label for="lastName" class="sr-only">Last Name</label>
+          <input type="text" id="lastName" placeholder="Last Name" aria-label="Last Name" class="justify-center items-start px-5 py-5 mt-6 text-xs font-semibold rounded-xl bg-zinc-100 text-zinc-500" />
+          
+          <label for="email" class="sr-only">Email</label>
+          <input type="email" id="email" placeholder="Email" aria-label="Email" class="justify-center items-start px-5 py-5 mt-6 text-xs font-semibold whitespace-nowrap rounded-xl bg-zinc-100 text-zinc-500" />
+          
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" id="password" placeholder="Password" aria-label="Password" class="justify-center items-start px-5 py-5 mt-6 text-xs font-semibold whitespace-nowrap rounded-xl bg-zinc-100 text-zinc-500" />
+          
+          <div class="flex gap-2 mt-6">
+            <div class="flex flex-col justify-center">
+              <input type="checkbox" id="terms" class="shrink-0 rounded border border-solid border-zinc-500 h-[22px]" />
+            </div>
+            <label for="terms" class="flex-auto my-auto text-xs font-semibold leading-5 text-indigo-300 underline">
+              <span class="font-medium">By proceeding, I agree to all</span>
+              <a href="#" class="font-medium text-indigo-300 underline">T&C</a>
+              <span class="font-medium">and</span>
+              <a href="#" class="font-medium text-indigo-300 underline">Privacy Policy</a>
+            </label>
+          </div>
+          <a onclick="window.open('WhatYourGoal.html')" href="WhatYourGoal.html" target="_blank" class="justify-center items-center px-16 py-5 mt-32 text-base font-semibold text-center text-white rounded-xl" >
+          <button type="submit" >Create an Account</button>
+          </a>
+        </form>
+        
+        <div class="flex gap-2.5 mt-7 text-xs font-medium whitespace-nowrap text-zinc-800">
+          <hr class="shrink-0 my-auto h-px border border-solid bg-zinc-500 border-zinc-500 w-[155px]" />
+          <div class="flex-auto">Or</div>
+        </div>
+        
+        <div class="flex gap-5 self-center mt-7">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cafecd7d6f7a37fb75bc70091373a3fbf6c641b6ca72da03d558e228fcd6fecb?apiKey=42bb954c825745999302100cb42c8fd0&" alt="Sign in with Google" class="shrink-0 w-11 rounded-lg border border-solid aspect-square border-zinc-500" />
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d15c319b2c3b32777c9f485f3635d01b344606a347ed1b29017d67d7a94e978e?apiKey=42bb954c825745999302100cb42c8fd0&" alt="Sign in with Apple" class="shrink-0 w-11 rounded-lg border border-solid aspect-square border-zinc-500" />
+        </div>
+        
+        <div class="self-center mt-7 text-xs font-medium text-indigo-400 underline">
+          <span>Already have an account?</span>
+          <a onclick="window.open('Signup.html')" href="Signup.html" target="_blank" class="text-indigo-400 underline">Login</a>
+        </div>
+      </div>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        .container {
+          border-radius: 10px;
+          background-color: #fcfcfc;
+          display: flex;
+          max-width: 375px;
+          flex-direction: column;
+          padding: 15px 16px 30px;
+        }
+      
+        .header {
+          align-self: start;
+          display: flex;
+          margin-left: 12px;
+          gap: 20px;
+          font-size: 15px;
+          color: #252727;
+          font-weight: 600;
+          white-space: nowrap;
+          text-align: center;
+          letter-spacing: -0.3px;
+          justify-content: space-between;
+        }
+      
+        .time {
+          font-family: Montserrat, sans-serif;
+        }
+      
+        .logo {
+          aspect-ratio: 5.56;
+          object-fit: auto;
+          object-position: center;
+          width: 67px;
+          align-self: start;
+        }
+      
+        .title {
+          color: var(--black, #2c2b2b);
+          margin-top: 43px;
+          font: 600 20px Roboto, sans-serif;
+        }
+      
+        .email-input {
+          border-radius: 12px;
+          background-color: #f1f1f1;
+          margin-top: 49px;
+          align-items: start;
+          color: #7f7f7f;
+          white-space: nowrap;
+          justify-content: center;
+          padding: 21px 20px;
+          font: 600 12px Montserrat, sans-serif;
+        }
+      
+        .password-input {
+          border-radius: 12px;
+          background-color: #f1f1f1;
+          display: flex;
+          margin-top: 24px;
+          gap: 20px;
+          font-size: 12px;
+          color: #7f7f7f;
+          font-weight: 600;
+          white-space: nowrap;
+          justify-content: space-between;
+          padding: 17px 19px;
+        }
+      
+        .password-label {
+          font-family: Montserrat, sans-serif;
+          margin: auto 0;
+        }
+      
+        .password-icon {
+          aspect-ratio: 1;
+          object-fit: auto;
+          object-position: center;
+          width: 16px;
+        }
+      
+        .forgot-password {
+          color: #7f7f7f;
+          text-decoration: underline;
+          margin-top: 13px;
+          font: 500 12px Montserrat, sans-serif;
+        }
+      
+        .sign-in-button {
+          border-radius: 12px;
+          background: linear-gradient(270deg, #7b91ff 0%, #95beff 100%);
+          margin-top: 291px;
+          align-items: center;
+          color: #fff;
+          justify-content: center;
+          padding: 18px 60px;
+          font: 600 16px Montserrat, sans-serif;
+        }
+      
+        .divider {
+          display: flex;
+          margin-top: 26px;
+          gap: 10px;
+          font-size: 12px;
+          color: var(--black, #2c2b2b);
+          font-weight: 500;
+          white-space: nowrap;
+        }
+      
+        .divider-line {
+          border-color: rgba(127, 127, 127, 1);
+          border-style: solid;
+          border-width: 1px;
+          background-color: var(--gray-100, #7f7f7f);
+          width: 155px;
+          height: 1px;
+          margin: auto 0;
+        }
+      
+        .divider-text {
+          font-family: Montserrat, sans-serif;
+          flex-grow: 1;
+          flex-basis: auto;
+        }
+      
+        .social-login {
+          align-self: center;
+          display: flex;
+          margin-top: 28px;
+          gap: 18px;
+        }
+      
+        .social-icon {
+          aspect-ratio: 1;
+          object-fit: auto;
+          object-position: center;
+          width: 44px;
+          border-radius: 8px;
+          border: 1px solid rgba(127, 127, 127, 1);
+        }
+      
+        .create-account {
+          color: #829dff;
+          text-decoration: underline;
+          align-self: center;
+          margin-top: 29px;
+          font: 500 12px Roboto, sans-serif;
+        }
+      
+        .no-account {
+          font-family: Montserrat, sans-serif;
+          color: rgba(44, 43, 43, 1);
+        }
+      
+        .create-account-link {
+          font-family: Montserrat, sans-serif;
+        }
+        .decorative-icon {
+          width: 60px;
+          align-self: end;
+          margin-top: 99px;
+        }
+      </style>
+</head>
+<body>      
+      <main class="container">
+        <header class="header">
+          <div class="time">9:41</div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fb36d0140455c1ed268adc238f98be3b009e61ccd5a0e97ad85e4466f8bae401?apiKey=42bb954c825745999302100cb42c8fd0&" alt="" class="logo" />
+        </header>
+        <h1 class="title">Welcome Back</h1>
+        <form>
+          <label for="email" class="visually-hidden">Email</label>
+          <input type="email" id="email" placeholder="Email" class="email-input" />
+          <div class="password-input">
+            <label for="password" class="password-label">Password</label>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd8a0b22dc934ea56370fbab17987dd55e311d8d9911323c51d75892bee4dc8f?apiKey=42bb954c825745999302100cb42c8fd0&" alt="" class="password-icon" />
+          </div>
+          <a href="#" class="forgot-password">Forgot your password?</a>
+          <a onclick="window.open('WhatYourGoal.html')" href="WhatYourGoal.html" target="_blank" >
+          <button type="submit" class="sign-in-button">Sign In</button>
+          </a>
+        </form>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-text">Or</div>
+        </div>
+        <div class="social-login">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cafecd7d6f7a37fb75bc70091373a3fbf6c641b6ca72da03d558e228fcd6fecb?apiKey=42bb954c825745999302100cb42c8fd0&" alt="Login with Google" class="social-icon" />
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d15c319b2c3b32777c9f485f3635d01b344606a347ed1b29017d67d7a94e978e?apiKey=42bb954c825745999302100cb42c8fd0&" alt="Login with Facebook" class="social-icon" />
+        </div>
+        <div class="create-account">
+          <span class="no-account">Don't have an account yet?</span>
+          <a onclick="window.open('Signin.html')" href="Signin.html" target="_blank"  >
+          <a href="#" class="create-account-link">Create an account</a></a>
+        </div>
+      </main>
+      <div class="flex flex-col px-4 pt-4 pb-8 rounded-xl bg-zinc-50 max-w-[375px]">
+        <header class="flex gap-5 justify-between self-start ml-3 text-base font-semibold tracking-tight text-center whitespace-nowrap text-neutral-800">
+          <div>9:41</div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fb36d0140455c1ed268adc238f98be3b009e61ccd5a0e97ad85e4466f8bae401?apiKey=42bb954c825745999302100cb42c8fd0&" alt="Mobile signal and battery status" class="shrink-0 self-start aspect-[5.56] w-[67px]" />
+        </header>
+
+
+
+        <h1 class="mt-11 text-xl font-semibold text-zinc-800">Welcome Back</h1>
+        <form>
+          <label for="email" class="sr-only">Email</label>
+          <input type="email" id="email" placeholder="Email" class="justify-center items-start px-5 py-5 mt-12 text-xs font-semibold whitespace-nowrap rounded-xl bg-zinc-100 text-zinc-500" />
+          
+          <label for="password" class="sr-only">Password</label>
+          <div class="flex gap-5 justify-between px-5 py-4 mt-6 text-xs font-semibold whitespace-nowrap rounded-xl bg-zinc-100 text-zinc-500">
+            <input type="password" id="password" placeholder="Password" class="my-auto" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd8a0b22dc934ea56370fbab17987dd55e311d8d9911323c51d75892bee4dc8f?apiKey=42bb954c825745999302100cb42c8fd0&" alt="Toggle password visibility" class="shrink-0 w-4 aspect-square" />
+          </div>
+          
+          <a href="#" class="mt-3.5 text-xs font-medium underline text-zinc-500">Forgot your password?</a>
+          
+          <button type="submit" class="justify-center items-center px-16 py-5 mt-72 text-base font-semibold text-white rounded-xl">Sign In</button>
+        </form>
+        
+        <div class="flex gap-2.5 mt-7 text-xs font-medium whitespace-nowrap text-zinc-800">
+          <hr class="shrink-0 my-auto h-px border border-solid bg-zinc-500 border-zinc-500 w-[155px]" />
+          <div class="flex-auto">Or</div>
+        </div>
+        
+        <div class="flex gap-5 self-center mt-7">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cafecd7d6f7a37fb75bc70091373a3fbf6c641b6ca72da03d558e228fcd6fecb?apiKey=42bb954c825745999302100cb42c8fd0&" alt="Sign in with Google" class="shrink-0 w-11 rounded-lg border border-solid aspect-square border-zinc-500" />
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d15c319b2c3b32777c9f485f3635d01b344606a347ed1b29017d67d7a94e978e?apiKey=42bb954c825745999302100cb42c8fd0&" alt="Sign in with Apple" class="shrink-0 w-11 rounded-lg border border-solid aspect-square border-zinc-500" />
+        </div>
+        
+        <div class="self-center mt-7 text-xs font-medium">
+          <span class="text-zinc-800">Don't have an account yet?</span>
+          <a onclick="window.open('Signin.html')" href="Signin.html" target="_blank" class="text-indigo-400 underline">Create an account</a>
+        </div>
+      </div>
+
+
+    
+
+</body>
+</html>
