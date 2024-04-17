@@ -7,399 +7,11 @@
     <link rel="stylesheet" href="output.css"/>
 </head>
 <body>
-    <style>
-        .workout-schedule {
-          border-radius: 10px;
-          background-color: #fcfcfc;
-          display: flex;
-          max-width: 375px;
-          padding: 15px 0;
-          flex-direction: column;
-        }
-      
-        .header {
-          align-self: center;
-          display: flex;
-          width: 100%;
-          max-width: 345px;
-          gap: 20px;
-          font-weight: 600;
-          text-align: center;
-        }
-      
-        .time-battery {
-          display: flex;
-          flex-direction: column;
-          align-items: start;
-          font-size: 15px;
-          color: #252727;
-          white-space: nowrap;
-          letter-spacing: -0.3px;
-          padding: 0 20px;
-        }
-      
-        .time {
-          font-family: Montserrat, sans-serif;
-        }
-      
-        .battery-icon {
-          aspect-ratio: 1;
-          object-fit: auto;
-          object-position: center;
-          width: 20px;
-          fill: var(--gray-50, #f1f1f1);
-          margin-top: 44px;
-        }
-      
-        .title-container {
-          align-self: start;
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-          font-size: 20px;
-          color: var(--black, #2c2b2b);
-          flex-grow: 1;
-          flex-basis: auto;
-          padding: 0 20px;
-        }
-      
-        .title {
-          font-family: Montserrat, sans-serif;
-          align-self: end;
-          margin-top: 56px;
-          flex-grow: 1;
-        }
-      
-        .menu-icon {
-          aspect-ratio: 5.56;
-          object-fit: auto;
-          object-position: center;
-          width: 67px;
-          align-self: start;
-        }
-      
-        .month-navigation {
-          align-self: center;
-          display: flex;
-          margin-top: 19px;
-          gap: 10px;
-          font-size: 12px;
-          color: #2c2b2b;
-          font-weight: 600;
-          text-align: center;
-          padding: 0 20px;
-        }
-      
-        .prev-month-icon,
-        .next-month-icon {
-          aspect-ratio: 0.7;
-          object-fit: auto;
-          object-position: center;
-          width: 7px;
-          stroke-width: 1.5px;
-          stroke: var(--black, #2c2b2b);
-          border-color: rgba(44, 43, 43, 1);
-          border-style: solid;
-          border-width: 2px;
-        }
-      
-        current-month {
-          font-family: Montserrat, sans-serif;
-        }
-      
-        .calendar {
-          display: flex;
-          margin-top: 16px;
-          width: 100%;
-          flex-direction: column;
-          font-size: 12px;
-          font-weight: 600;
-          padding: 0 16px;
-        }
-      
-        .weekdays {
-          justify-content: center;
-          display: flex;
-          gap: 7px;
-          font-size: 11px;
-          color: #454545;
-          font-weight: 500;
-          text-align: center;
-          line-height: 17px;
-        }
-      
-        .weekday {
-          font-family: Quicksand, sans-serif;
-          border-radius: 9.963px;
-          background-color: #fff;
-          align-items: start;
-          padding: 9px 21px 30px;
-        }
-      
-        .current-day {
-          font-family: Quicksand, sans-serif;
-          border-radius: 9.963px;
-          background: linear-gradient(270deg, #8da4ff -0.62%, #d1dbff 100.68%);
-          align-self: start;
-          color: #fff;
-          padding: 9px 20px 28px;
-        }
-      
-        .weekday-with-event {
-          border-radius: 9.963px;
-          background-color: #fff;
-          display: flex;
-          flex-direction: column;
-          align-items: start;
-          padding: 8px 0;
-        }
-      
-        .weekday-text {
-          font-family: Quicksand, sans-serif;
-          margin-left: 15px;
-        }
-      
-        .event-indicator {
-          margin-top: 17px;
-          width: 9px;
-          height: 8px;
-        }
-      
-        .schedule {
-          display: flex;
-          margin-top: 41px;
-          align-items: flex-start;
-          gap: 20px;
-        }
-      
-        .timeline {
-          align-self: start;
-          display: flex;
-          flex-direction: column;
-          color: #2c2b2b;
-          text-align: center;
-        }
-      
-        .timeline-item {
-          font-family: Montserrat, sans-serif;
-        }
-      
-        .timeline-item:not(:first-child) {
-          margin-top: 29px;
-        }
-      
-        .events {
-          align-self: end;
-          display: flex;
-          margin-top: 47px;
-          flex-direction: column;
-          color: #fff;
-          flex-grow: 1;
-          flex-basis: 0;
-          width: fit-content;
-        }
-      
-        .event {
-          font-family: Montserrat, sans-serif;
-          border-radius: 20px;
-          background: linear-gradient(270deg, #d3a4f4 0%, #e9b1e0 102.35%);
-          align-self: end;
-          justify-content: center;
-          padding: 10px;
-        }
-      
-        .event:not(:first-child) {
-          margin-top: 37px;
-        }
-      
-        .event-spacer {
-          background-color: #fcfcfc;
-          z-index: 10;
-          margin-top: -5px;
-          height: 10px;
-        }
-      
-        .timeline-item-afternoon {
-          color: #2c2b2b;
-          text-align: center;
-          font-family: Montserrat, sans-serif;
-          margin-top: 7px;
-        }
-      
-        .timeline-item-afternoon:not(:first-child) {
-          margin-top: 29px;
-        }
-      
-        .afternoon-schedule {
-          display: flex;
-          margin-top: 19px;
-          align-items: flex-start;
-          gap: 20px;
-          justify-content: space-between;
-        }
-      
-        .afternoon-timeline {
-          display: flex;
-          flex-direction: column;
-          color: #2c2b2b;
-          text-align: center;
-          margin: auto 0;
-        }
-      
-        .afternoon-timeline-item {
-          font-family: Montserrat, sans-serif;
-        }
-      
-        .afternoon-timeline-item:not(:first-child) {
-          margin-top: 35px;
-        }
-      
-        .afternoon-event {
-          font-family: Montserrat, sans-serif;
-          border-radius: 20px;
-          background-color: var(--gray-50, #f1f1f1);
-          align-self: start;
-          color: var(--black, #2c2b2b);
-          justify-content: center;
-          padding: 10px 8px;
-        }
-      
-        .add-event-button {
-          border-radius: 50%;
-          background: linear-gradient(91deg, #e9b1e0 0.79%, #d3a5f2 99.18%);
-          align-self: end;
-          margin-top: 48px;
-          align-items: center;
-          color: #fff;
-          white-space: nowrap;
-          justify-content: center;
-          width: 63px;
-          height: 63px;
-          padding: 0 26px;
-          font: 400 36px Montserrat, sans-serif;
-        }
-      
-        .timeline-item-evening {
-          color: #2c2b2b;
-          text-align: center;
-          font-family: Montserrat, sans-serif;
-          margin-top: 25px;
-        }
-      
-        .footer {
-          background-color: #fff;
-          display: flex;
-          margin-top: 25px;
-          width: 100%;
-          align-items: center;
-          justify-content: center;
-          padding: 24px 26px;
-        }
-      
-        .footer-image {
-          aspect-ratio: 11.11;
-          object-fit: auto;
-          object-position: center;
-          width: 322px;
-        }
-      </style>
-      
-      <div class="workout-schedule">
-        <header class="header">
-          <div class="time-battery">
-            <div class="time">9:41</div>
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/367d4db82f57897995aa34d0d37f0ff0768b9bd2e756d0d3ae47cf80655e06bb?apiKey=42bb954c825745999302100cb42c8fd0&" alt="" class="battery-icon" />
-          </div>
-          <div class="title-container">
-            <h1 class="title">Workout Schedule</h1>
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/08ff242f4ad63e2ae6ed6ad698c9d8969c7074f1843296d4a517c7cbfdbe3598?apiKey=42bb954c825745999302100cb42c8fd0&" alt="" class="menu-icon" />
-          </div>
-        </header>
-        
-        <nav class="month-navigation">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d59202ecf47e79310cda9b415330bc6c4d7794b423b4d969d112953d5b9a0c1f?apiKey=42bb954c825745999302100cb42c8fd0&" alt="" class="prev-month-icon" />
-          <div class="current-month">Feb 2024</div>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/689ba7a7994d39a0fbf115fe944d126ea3d42efcbb831145c01aced7df114761?apiKey=42bb954c825745999302100cb42c8fd0&" alt="" class="next-month-icon" />
-        </nav>
-      
-        <div class="calendar">
-          <div class="weekdays">
-            <div class="weekday">
-              <span>Sun</span>
-              <br />
-              <span>5</span>
-            </div>
-            <div class="current-day">
-              <span>Mon</span>
-              <br />
-              <span>6</span>
-            </div>
-            <div class="weekday-with-event">
-              <div class="weekday-text">
-                <span>Tue</span>
-                <br />
-                <span>7</span>
-              </div>
-              <div class="event-indicator"></div>
-            </div>
-            <div class="weekday">
-              <span>Wed</span>
-              <br />
-              <span>8</span>
-            </div>
-            <div class="weekday">
-              <span>Thu</span>
-              <br />
-              <span>9</span>
-            </div>
-          </div>
-      
-          <div class="schedule">
-            <div class="timeline">
-              <div class="timeline-item">06:00 AM</div>
-              <div class="timeline-item">07:00 AM</div>
-              <div class="timeline-item">08:00 AM</div>
-              <div class="timeline-item">09:00 AM</div>
-            </div>
-            <div class="events">
-              <div class="event">Ab Workout, 7:30am</div>
-              <div class="event">Upperbody Workout, 9am</div>
-              <div class="event-spacer"></div>
-            </div>
-          </div>
-      
-          <div class="timeline-item-afternoon">10:00 AM</div>
-          <div class="timeline-item-afternoon">11:00 AM</div>
-          <div class="timeline-item-afternoon">12:00 AM</div>
-          <div class="timeline-item-afternoon">01:00 AM</div>
-      
-          <div class="afternoon-schedule">
-            <div class="afternoon-timeline">
-              <div class="afternoon-timeline-item">02:00 AM</div>
-              <div class="afternoon-timeline-item">03:00 AM</div>
-              <div class="afternoon-timeline-item">04:00 AM</div>
-            </div>
-            <div class="afternoon-event">Lowerbody Workout, 3pm</div>
-            <div class="add-event-button">+</div>
-          </div>
-      
-          <div class="timeline-item-evening">05:00 AM</div>
-        </div>
-      
-        <footer class="footer">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d29609e50a73c20a9bad10d4ce60a433b142195f829708b3ea47e80603081464?apiKey=42bb954c825745999302100cb42c8fd0&" alt="" class="footer-image" />
-        </footer>
-      </div>
-
       <div class="flex flex-col pt-4 rounded-xl bg-zinc-50 max-w-[375px]">
         <header class="flex gap-5 self-center w-full font-semibold text-center max-w-[345px]">
-          <div class="flex flex-col items-start px-5 text-base tracking-tight whitespace-nowrap text-neutral-800">
-            <time>9:41</time>
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/367d4db82f57897995aa34d0d37f0ff0768b9bd2e756d0d3ae47cf80655e06bb?apiKey=42bb954c825745999302100cb42c8fd0&" alt="" class="mt-11 w-5 aspect-square fill-zinc-100" />
-          </div>
           <div class="flex flex-auto gap-3 items-start self-start px-5 text-xl text-zinc-800">
             <h1 class="grow self-end mt-14">Workout Schedule</h1>
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/08ff242f4ad63e2ae6ed6ad698c9d8969c7074f1843296d4a517c7cbfdbe3598?apiKey=42bb954c825745999302100cb42c8fd0&" alt="" class="shrink-0 self-start aspect-[5.56] w-[67px]" />
+           
           </div>
         </header>
         <nav class="flex gap-2.5 self-center px-5 mt-5 text-xs font-semibold text-center text-zinc-800">
@@ -419,10 +31,10 @@
               <span class="text-3xl font-semibold text-zinc-700">5</span>
               <br />
             </div>
-            <div class="self-start px-5 pt-2.5 pb-7 text-white rounded-lg">
-              <time class="font-semibold leading-4 text-white">Mon</time>
+            <div class="self-start px-5 pt-2.5 pb-7 bg-indigo-300 rounded-lg ">
+              <time class="font-semibold leading-4 text-zinc-700">Mon</time>
               <br />
-              <span class="text-3xl font-semibold text-white">6</span>
+              <span class="text-3xl font-semibold text-zinc-700e">6</span>
               <br />
             </div>
             <div class="flex flex-col items-start py-2 bg-white rounded-lg">
@@ -447,43 +59,64 @@
               <br />
             </div>
           </div>
-          <div class="flex gap-5 items-start mt-10">
-            <div class="flex flex-col self-start text-center text-zinc-800">
-              <time>06:00 AM</time>
-              <time class="mt-7">07:00 AM</time>
-              <time class="mt-7">08:00 AM</time>
-              <time class="mt-8">09:00 AM</time>
-            </div>
-            <div class="flex flex-col grow shrink-0 self-end mt-12 text-white basis-0 w-fit">
-              <div class="justify-center self-end p-2.5 rounded-3xl">
-                Ab Workout, 7:30am
-              </div>
-              <div class="justify-center px-3 py-2.5 mt-9 rounded-3xl">
-                Upperbody Workout, 9am
-              </div>
-              <div class="z-10 shrink-0 mt-0 h-2.5 bg-zinc-50" aria-hidden="true"></div>
+        
+          <div class="flex items-start mt-5">
+            <div class="flex flex-col  w-full text-zinc-800">
+              
+              <time class="">06:00 AM</time>
+              <hr class="mt-2 border-t-2 border-black dark:border-white w-full  mb-2"/>
+              <time class="mt-6">07:00 AM</time>
+              <div class=" w-full flex flex-row bg-black">
+                <hr class="w-full bg-gray-100 mt-4 " />
+                <div class="w-full px-1.5 py-2 rounded bg-indigo-300 text-zinc-800">
+                  Ab Workout, 7:30am
+                </div>
+                <hr class="w-full mt-6" /></div>
+              <time class="mt-0 mb-3">08:00 AM</time>
+              <hr class="mt-2 w-full bg-blue-600 mb-2"/>
+                  
             </div>
           </div>
-          <time class="mt-2 text-center text-zinc-800">10:00 AM</time>
-          <time class="mt-7 text-center text-zinc-800">11:00 AM</time>
-          <time class="mt-8 text-center text-zinc-800">12:00 AM</time>
-          <time class="mt-8 text-center text-zinc-800">01:00 AM</time>
-          <div class="flex gap-5 justify-between items-start mt-5">
-            <div class="flex flex-col my-auto text-center text-zinc-800">
-              <time>02:00 AM</time>
-              <time class="mt-9">03:00 AM</time>
-              <time class="mt-7">04:00 AM</time>
-            </div>
-            <div class="justify-center self-start px-2 py-2.5 rounded-3xl bg-zinc-100 text-zinc-800">
-              Lowerbody Workout, 3pm
-            </div>
-            <button class="justify-center items-center self-end px-7 mt-12 text-4xl text-white whitespace-nowrap rounded-full h-[63px] w-[63px]">
-              +
-            </button>
+          <div class="flex flex-row w-full"> 
+            <time class="mt-3">09:00 AM</time>
+          <div class="ml-4 mt-3 px-2 py-2 flex flex-row rounded-3xl bg-indigo-300 text-zinc-800">
+            Upperbody Workout, 9am
           </div>
-          <time class="mt-6 text-center text-zinc-800">05:00 AM</time>
+        </div>
+          <hr class="mt-2 w-full bg-blue-600 mb-2"/>
+          
+          <time class="mt-2  text-zinc-800">10:00 AM</time>
+          <hr class="mt-2 w-full bg-blue-600 mb-2"/>
+            <time class="mt-2  text-zinc-800">11:00 AM</time>
+            <hr class="mt-2 w-full bg-blue-600 mb-2"/>
+            <time class="mt-2  text-zinc-800">12:00 AM</time>
+            <hr class="mt-2 w-full bg-blue-600 mb-2"/>
+            <time class="mt-2  text-zinc-800">01:00 AM</time>
+            <hr class="mt-2 w-full bg-blue-600 mb-2"/>
+          <div class="flex items-start mt-5">
+            <div class="flex flex-col  w-full text-zinc-800">
+              
+              <time class="">02:00 AM</time>
+              <hr class="mt-2 border-t-2 border-black dark:border-white w-full  mb-2"/>
+              <time class="mt-6">03:00 AM</time>
+              <div class=" w-full flex flex-row bg-black">
+                <hr class="w-full bg-gray-100 mt-4 " />
+                <div class="w-full px-1 py-2 rounded-xl bg-indigo-300 text-zinc-800">
+                  Lowerbody Workout, 3pm
+                </div>
+                <hr class="w-full mt-6" /></div>
+              <time class="mt-0 mb-3">04:00 AM</time>
+              <hr class="mt-2 w-full bg-blue-600 mb-2"/>
+                  
+            </div>
+          </div>
+          <time class="mt-6  text-zinc-800">05:00 AM</time>
+          <hr class="mt-2 w-full bg-blue-600 mb-2"/>
         </section>
-        <footer class="flex justify-center items-center px-7 py-6 mt-6 w-full bg-white">
+        <div class="h-screen bg-blue-400 flex justify-center items-center">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5754e1b7714007d984d987b8aab9aba1977962ac388e8832877c858bb47abbde?apiKey=42bb954c825745999302100cb42c8fd0&" alt=""  />
+        </div>
+        <footer class="flex justify-center items-center px-7 py-6 w-full bg-white">
           <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d29609e50a73c20a9bad10d4ce60a433b142195f829708b3ea47e80603081464?apiKey=42bb954c825745999302100cb42c8fd0&" alt="" class="aspect-[11.11] w-[322px]" />
         </footer>
       </div>
